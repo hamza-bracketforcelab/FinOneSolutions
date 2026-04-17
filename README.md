@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Here is a professional, clean, and well-structured README.md file in English, specifically tailored for a frontend-only Insurance and Finance services website.
 
-# Run and deploy your AI Studio app
+Insurance & Finance Services Portal
+A modern, high-performance frontend application designed to showcase financial consultancy and insurance products. This project focuses on delivering a professional user interface (UI) and a seamless user experience (UX) to build trust and credibility in the financial sector.
 
-This contains everything you need to run your app locally.
+🎯 Project Overview
+This is a service-oriented frontend platform that allows users to explore various insurance categories (Life, Health, Property) and financial planning services. It is built with a focus on lead generation, accessibility, and clean aesthetics.
 
-View your app in AI Studio: https://ai.studio/apps/fb095d41-e2f1-4619-b503-5dc701d3273b
+✨ Key Features
+Service Catalogs: Detailed layouts for showcasing various insurance policies and financial plans.
 
-## Run Locally
+Responsive Design: Fully optimized for mobile, tablet, and desktop environments.
+
+Interactive UI Components: Includes professional sliders, accordions for FAQs, and service cards.
+
+Lead Generation Forms: Validated contact and inquiry forms for potential clients.
+
+SEO Friendly: Semantic HTML structure to ensure better search engine visibility.
+
+Fast Loading: Optimized assets and clean code for rapid page transitions.
 
 **Prerequisites:**  Node.js
 
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+
 3. Run the app:
    `npm run dev`
