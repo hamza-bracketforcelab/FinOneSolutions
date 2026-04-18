@@ -28,9 +28,11 @@ import {
   Clock,
   ThumbsUp,
   LayoutGrid,
+  CheckCircle2,
   Menu,
   X
 } from "lucide-react";
+import ChatBot from './components/ChatBot';
 import { useState, useEffect, ReactNode } from "react";
 
 // --- Types ---
@@ -52,13 +54,13 @@ const SERVICES = [
   { 
     title: "Trade Factoring Solutions", 
     items: [
-      { icon: <Wallet className="w-6 h-6" />, label: "Trade Factoring", subLabel: "(RPA) Partner with Trade Wind Finance" }
+      { icon: <Wallet className="w-6 h-6" />, label: "Trade Factoring", subLabel: "(RPA) Partner with World renowned factoring company with worldwide existence" }
     ] 
   },
   { 
     title: "General Insurance Solutions", 
     items: [
-      { icon: <ShieldCheck className="w-6 h-6" />, label: "General Insurance", subLabel: "Under RR+ Rated Companies" }
+      { icon: <ShieldCheck className="w-6 h-6" />, label: "General Insurance", subLabel: "Under AA+ Rated Companies" }
     ] 
   },
   { 
@@ -164,9 +166,11 @@ export default function App() {
           <div className="flex justify-between items-center">
             <Logo />
             
-            <nav className="hidden md:flex items-center gap-8">
-              <NavLink href="#home">Home</NavLink>
-              <NavLink href="#contact">Contact</NavLink>
+              <nav className="hidden md:flex items-center gap-8">
+                <NavLink href="#home">Home</NavLink>
+                <NavLink href="#services">Services</NavLink>
+                <NavLink href="#faq">FAQ</NavLink>
+                <NavLink href="#contact">Contact</NavLink>
               <a 
                 href="tel:+923007207929" 
                 className="bg-primary hover:bg-red-600 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 transition-all active:scale-95 flex items-center gap-2"
@@ -208,10 +212,12 @@ export default function App() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
             >
-              <div className="px-6 py-8 flex flex-col gap-6">
-                <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">Home</a>
-                <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">Contact</a>
-              </div>
+                <div className="px-6 py-8 flex flex-col gap-6">
+                  <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">Home</a>
+                  <a href="#services" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">Services</a>
+                  <a href="#faq" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">FAQ</a>
+                  <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-slate-900 border-b border-slate-50 pb-2">Contact</a>
+                </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -389,7 +395,7 @@ export default function App() {
              </p>
              <ul className="space-y-4 mb-10 inline-block lg:block text-left">
                {[
-                 "Referral partner with Trade Wind Finance.",
+                 "Referral partner with World renowned factoring company with worldwide existence.",
                  "AA+ rated insurance provider network.",
                  "Certified financial statement audits.",
                  "Expert advisory on capital management."
@@ -437,6 +443,112 @@ export default function App() {
                 className={`w-3 h-3 rounded-full transition-all ${activeTestimonial === i ? "bg-primary w-8" : "bg-slate-300"}`}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading subtitle="Common queries about our financial services">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </SectionHeading>
+
+          <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="p-6 md:p-8 bg-slate-50/50">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                  <div className="w-2 h-8 bg-primary rounded-full" />
+                  How to apply for export factoring?
+                </h3>
+                
+                <div className="space-y-8 text-slate-600 leading-relaxed">
+                  <div className="font-medium text-slate-800 italic bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                    To apply for export factoring, follow these steps:
+                  </div>
+                  
+                  <div className="grid gap-6">
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">1</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Eligibility Check</h4>
+                        <p className="text-sm">Ensure your company meets the criteria, typically having exports above $2 million or PKR 400 million, depending on the financier's requirements.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">2</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Required Documents</h4>
+                        <p className="text-sm mb-3">Prepare necessary documents, which may include:</p>
+                        <ul className="grid sm:grid-cols-2 gap-3">
+                          <li className="flex items-center gap-2 text-sm bg-white p-3 rounded-xl border border-slate-50 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                            <span><strong>Business Profile:</strong> Overview & Export strategy</span>
+                          </li>
+                          <li className="flex items-center gap-2 text-sm bg-white p-3 rounded-xl border border-slate-50 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                            <span><strong>Financial Statements:</strong> Audited records</span>
+                          </li>
+                          <li className="flex items-center gap-2 text-sm bg-white p-3 rounded-xl border border-slate-50 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                            <span><strong>Export Contracts:</strong> Buyer agreements</span>
+                          </li>
+                          <li className="flex items-center gap-2 text-sm bg-white p-3 rounded-xl border border-slate-50 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
+                            <span><strong>Invoice Details:</strong> Outstanding invoices</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">3</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Application Submission</h4>
+                        <p className="text-sm">Submit your application along with the required documents to the chosen factor.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">4</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Due Diligence</h4>
+                        <p className="text-sm">The factor will assess your creditworthiness, buyer credibility, and other risk factors.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">5</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Approval and Funding</h4>
+                        <p className="text-sm">Upon approval, the factor will provide financing for your exports, typically up to 93% of the invoice value.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">6</div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 text-base">Repayment</h4>
+                        <p className="text-sm">Repayment terms will be agreed upon, usually based on the payment received from the foreign buyer.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-10 p-6 bg-secondary text-white rounded-[2rem] shadow-xl relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700" />
+                    <p className="relative z-10 text-sm md:text-base font-medium leading-relaxed">
+                      It's recommended to contact a factoring consultant, <strong className="text-primary tracking-wide">Wasim Nasir</strong>, <a href="tel:03007207929" className="hover:underline font-black">0300 7207929</a> for guidance on the application process and to discuss specific requirements.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -489,7 +601,6 @@ export default function App() {
               className="bg-white p-10 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-50 w-full max-w-lg relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16" />
-              <h3 className="text-2xl md:text-3xl font-black text-secondary mb-10 tracking-tight">Admin</h3>
               
               <div className="space-y-8">
                 <a href="tel:+923007207929" className="flex items-center justify-center gap-5 group">
@@ -584,6 +695,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      <ChatBot />
     </div>
   );
 }
