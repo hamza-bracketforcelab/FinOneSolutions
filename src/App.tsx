@@ -412,6 +412,105 @@ export default function App() {
         </div>
       </section>
 
+      {/* Founder Intro Section */}
+      <section className="py-24 bg-white overflow-hidden px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="absolute -inset-4 bg-primary/5 rounded-[2rem] md:rounded-[3rem] blur-2xl -z-10 group-hover:bg-primary/10 transition-colors duration-500" />
+              <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden aspect-[4/5] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+                <img 
+                  src="/images/wasim_nasir.png" 
+                  alt="Wasim Nasir - Founder FinOne Solutions"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-secondary/95 via-secondary/60 to-transparent p-6 md:p-10 text-white">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-1">Wasim Nasir</h3>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-[1px] bg-primary" />
+                    <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-primary">Founder & CEO</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Badge */}
+              <motion.div 
+                initial={{ rotate: -10, scale: 0.8, opacity: 0 }}
+                whileInView={{ rotate: 12, scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-24 h-24 md:w-32 md:h-32 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center p-2 text-center border-4 border-slate-50 z-20"
+              >
+                <Star className="w-5 h-5 md:w-6 md:h-6 text-primary mb-1 fill-primary" />
+                <span className="text-[8px] md:text-[10px] font-black text-slate-900 uppercase leading-tight tracking-tighter italic">Expert Advisor</span>
+              </motion.div>
+            </motion.div>
+
+            <div className="space-y-8 md:space-y-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-[2px] bg-primary" />
+                  <span className="text-xs md:text-sm font-black uppercase tracking-[0.4em] text-primary">The Visionary Founder</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-black text-slate-900 leading-[1.05] mb-6">
+                  Experience That <span className="text-gradient">Globally</span> Connects.
+                </h2>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="space-y-6"
+              >
+                <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-serif italic border-l-4 border-primary pl-8 py-2">
+                  "Wasim Nasir, the founder of the company, possesses extensive experience in international trade finance, gained through his association with globally recognized financial institutions."
+                </p>
+                <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-xl">
+                  By leveraging deep-rooted connections with AA+ rated institutions, Wasim Nasir has transformed FinOne Solutions into a trust-based bridge for businesses navigating complex trade and insurance markets.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="grid grid-cols-2 gap-8 pt-10 border-t border-slate-100"
+              >
+                <div className="space-y-2">
+                  <div className="text-4xl md:text-5xl font-black text-secondary tracking-tighter">Global</div>
+                  <div className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest">Financial Reach</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-4xl md:text-5xl font-black text-primary tracking-tighter">AA+</div>
+                  <div className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest">Institutional Network</div>
+                </div>
+              </motion.div>
+              
+              <div className="pt-4">
+                <a 
+                  href="#contact"
+                  className="inline-flex items-center gap-4 py-4 px-8 rounded-2xl bg-slate-900 text-white font-bold hover:bg-secondary transition-all group active:scale-95 shadow-xl shadow-slate-900/10"
+                >
+                  Consult With Wasim <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="py-24 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
